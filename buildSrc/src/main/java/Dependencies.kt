@@ -37,6 +37,8 @@ object Deps {
     // Google
     const val google_dagger = "com.google.dagger:dagger:${Versions.google_dagger}"
     const val google_dagger_compiler = "com.google.dagger:dagger-compiler:${Versions.google_dagger}"
+    const val google_dagger_hilt_android = "com.google.dagger:hilt-android:${Versions.google_dagger}"
+    const val google_dagger_hilt_compiler = "com.google.dagger:hilt-compiler:${Versions.google_dagger}"
 
     // Other 3rd party
     const val squareup_retrofit = "com.squareup.retrofit2:retrofit:${Versions.squareup_retrofit}"

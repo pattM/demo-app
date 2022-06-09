@@ -4,6 +4,7 @@ import com.mucha.lib.internal.service.api.CocktailService
 import dagger.Module
 import dagger.Provides
 import dagger.Reusable
+import dagger.hilt.migration.DisableInstallInCheck
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -14,6 +15,7 @@ import javax.inject.Named
  * Dagger module for providing Retrofit services related classes.
  */
 @Module
+@DisableInstallInCheck
 internal object ServiceModule {
 
     private const val NAME_COCKTAILS: String = "cocktails"

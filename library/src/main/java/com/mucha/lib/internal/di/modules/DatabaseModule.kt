@@ -6,12 +6,14 @@ import com.mucha.lib.internal.db.dao.CategoryDao
 import dagger.Module
 import dagger.Provides
 import dagger.Reusable
+import dagger.hilt.migration.DisableInstallInCheck
 import javax.inject.Singleton
 
 /**
  * Dagger module for providing Database related classes.
  */
 @Module
+@DisableInstallInCheck
 internal object DatabaseModule {
 
     @Provides

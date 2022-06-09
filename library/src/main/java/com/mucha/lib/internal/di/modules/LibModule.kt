@@ -5,12 +5,14 @@ import com.mucha.lib.internal.DefaultDemoApi
 import com.mucha.lib.internal.db.dao.CategoryDao
 import dagger.Module
 import dagger.Provides
+import dagger.hilt.migration.DisableInstallInCheck
 import javax.inject.Singleton
 
 /**
  * Default library Dagger module.
  */
 @Module
+@DisableInstallInCheck
 internal class LibModule {
 
     @Provides

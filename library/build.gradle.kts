@@ -3,6 +3,8 @@ plugins {
 
     kotlin("android")
     kotlin("kapt")
+
+    id("dagger.hilt.android.plugin")
 }
 
 android {
@@ -29,6 +31,7 @@ dependencies {
 
     // Google
     implementation(Deps.google_dagger)
+    implementation(Deps.google_dagger_hilt_android)
 
     // 3rd party
     implementation(Deps.squareup_retrofit)
@@ -37,4 +40,5 @@ dependencies {
     // Kapt
     kapt(Deps.androidx_room_compiler)
     kapt(Deps.google_dagger_compiler)
+    kapt(Deps.google_dagger_hilt_compiler)
 }
