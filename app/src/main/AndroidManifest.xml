@@ -14,7 +14,7 @@
         android:theme="@style/Theme.App"
         tools:ignore="DataExtractionRules,UnusedAttribute">
         <activity
-            android:name="com.mucha.app.ui.MainActivity"
+            android:name="com.mucha.app.ui.main.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

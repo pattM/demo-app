@@ -4,7 +4,7 @@ import android.app.Application
 import com.mucha.lib.DemoLib
 
 /**
- *
+ * Main [Application] implementation.
  */
 class DemoApplication : Application() {
 
