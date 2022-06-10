@@ -7,4 +7,4 @@ import com.mucha.lib.internal.service.api.CocktailService
  *
  * @property strCategory The name of the category.
  */
-data class DrinkCategory(val strCategory: String)
+internal data class DrinkCategory(val strCategory: String)

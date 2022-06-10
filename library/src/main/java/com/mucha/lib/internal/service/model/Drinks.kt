@@ -7,4 +7,4 @@ import com.mucha.lib.internal.service.api.CocktailService
  *
  * @property drinks The list of drink categories.
  */
-data class Drinks(val drinks: List<DrinkCategory>)
+internal data class Drinks(val drinks: List<DrinkCategory>)
