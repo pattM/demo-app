@@ -11,6 +11,7 @@ object Versions {
     const val androidx_compose_material3 = "1.0.0-alpha13"
     const val androidx_core = "1.8.0"
     const val androidx_lifecycle_runtime = "2.4.1"
+    const val androidx_navigation_compose = "2.4.2"
     const val androidx_room = "2.4.2"
     const val androidx_work = "2.7.1"
 
@@ -29,6 +30,7 @@ object Deps {
     const val androidx_compose_ui_tooling_preview = "androidx.compose.ui:ui-tooling-preview:${Versions.androidx_compose}"
     const val androidx_core = "androidx.core:core-ktx:${Versions.androidx_core}"
     const val androidx_lifecycle_runtime = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.androidx_lifecycle_runtime}"
+    const val androidx_navigation_compose = "androidx.navigation:navigation-compose:${Versions.androidx_navigation_compose}"
     const val androidx_room = "androidx.room:room-ktx:${Versions.androidx_room}"
     const val androidx_room_compiler = "androidx.room:room-compiler:${Versions.androidx_room}"
     const val androidx_room_runtime = "androidx.room:room-runtime:${Versions.androidx_room}"

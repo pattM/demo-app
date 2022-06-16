@@ -1,3 +1,16 @@
 <resources>
+    <!-- Application name. -->
     <string name="app_name">Demo App</string>
+
+    <!-- List of Categories -->
+    <!-- The title above the list of drink categories. -->
+    <string name="categories_title">Categories</string>
+
+    <!-- List of Drinks -->
+    <!-- The title above the list of drinks. -->
+    <string name="drinks_title">Drinks</string>
+
+    <!-- Drink details -->
+    <!-- The title in drink detail screen. -->
+    <string name="drink_detail_title">Drink Detail</string>
 </resources>

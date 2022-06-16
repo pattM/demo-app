@@ -50,6 +50,7 @@ hilt {
 
 dependencies {
     implementation(project(":library"))
+    implementation(project(":utils"))
 
     // AndroidX
     implementation(Deps.androidx_activity_compose)
@@ -58,6 +59,7 @@ dependencies {
     implementation(Deps.androidx_compose_ui_tooling_preview)
     implementation(Deps.androidx_core)
     implementation(Deps.androidx_lifecycle_runtime)
+    implementation(Deps.androidx_navigation_compose)
 
     // Google
     implementation(Deps.google_dagger_hilt_android)

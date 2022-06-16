@@ -4,11 +4,9 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import com.mucha.app.ui.main.views.CategoryListItem
+import com.mucha.app.ui.main.navigation.MainNavGraph
 import com.mucha.app.ui.theme.AppTheme
 import com.mucha.lib.api.DrinkCategory
 import dagger.hilt.android.AndroidEntryPoint
@@ -27,12 +25,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             AppTheme {
                 val categories: List<DrinkCategory> by viewModel.drinkCategories.collectAsState(initial = emptyList())
-
-                LazyColumn {
-                    items(categories) { category ->
-                        CategoryListItem(category.name)
-                    }
-                }
+                MainNavGraph(categories = categories)
             }
         }
     }
