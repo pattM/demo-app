@@ -34,19 +34,16 @@ internal class DatabaseRefreshWorker(
     override suspend fun doWork(): Result {
         DemoLib.component.inject(this)
 
-        @Suppress("BlockingMethodInNonBlockingContext") // Safe. We are on BG thread.
-        val result =
-            cocktailsService.getCategories()
-                .runCatching { execute() }
-                .getOrNull()
+        val response = cocktailsService.getCategories()
 
-        val drinks = result?.body() // Null considered as download error.
-        return if (drinks != null) {
-            drinks.drinks.map { Category(name = it.strCategory) }
+        val categories = response.body()
+        return if (categories != null) {
+            categories.categories.map { Category(name = it.name) }
                 .let { categoriesToInsert -> categoryDao.get().insertAll(categoriesToInsert) }
 
             Result.success()
         } else {
+            // Null considered as download error. No matter the response is successful or not.
             if (runAttemptCount < MAX_ATTEMPTS) {
                 Result.retry()
             } else {
