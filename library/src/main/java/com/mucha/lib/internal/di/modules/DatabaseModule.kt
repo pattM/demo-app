@@ -3,6 +3,7 @@ package com.mucha.lib.internal.di.modules
 import android.app.Application
 import com.mucha.lib.internal.db.DemoDatabase
 import com.mucha.lib.internal.db.dao.CategoryDao
+import com.mucha.lib.internal.db.dao.DrinkDao
 import dagger.Module
 import dagger.Provides
 import dagger.Reusable
@@ -22,5 +23,9 @@ internal object DatabaseModule {
 
     @Provides
     @Reusable
-    fun cocktailsDao(database: DemoDatabase): CategoryDao = database.categoryDao
+    fun categoryDao(database: DemoDatabase): CategoryDao = database.categoryDao
+
+    @Provides
+    @Reusable
+    fun drinkDao(database: DemoDatabase): DrinkDao = database.drinkDao
 }

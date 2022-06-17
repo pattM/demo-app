@@ -6,17 +6,23 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.mucha.lib.internal.db.DemoDatabase.Companion.create
 import com.mucha.lib.internal.db.dao.CategoryDao
+import com.mucha.lib.internal.db.dao.DrinkDao
 import com.mucha.lib.internal.db.entities.Category
+import com.mucha.lib.internal.db.entities.Drink
 
 /**
  * Main database of a library module. Use provided [create] method to create an instance.
  */
 @Database(
-    entities = [Category::class],
+    entities = [
+        Category::class,
+        Drink::class,
+    ],
     version = VERSION
 )
 internal abstract class DemoDatabase : RoomDatabase() {
     abstract val categoryDao: CategoryDao
+    abstract val drinkDao: DrinkDao
 
     companion object {
 

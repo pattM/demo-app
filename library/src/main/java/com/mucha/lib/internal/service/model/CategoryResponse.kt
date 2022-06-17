@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName
 import com.mucha.lib.internal.service.api.CocktailService
 
 /**
- * Model class for [CocktailService.getCategories] response. Represents the drink category.
+ * Model class for [CocktailService.getCategories] response.
  *
  * @property categories Holder of the list of categories.
  */
