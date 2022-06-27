@@ -1,7 +1,7 @@
 package com.mucha.lib.di
 
 import com.mucha.lib.DemoLib
-import com.mucha.lib.api.DemoApi
+import com.mucha.lib.api.DemoRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -17,5 +17,5 @@ object DemoLibModule {
 
     @Provides
     @Singleton
-    fun demoApi(): DemoApi = DemoLib.component.demoApi
+    fun demoRepository(): DemoRepository = DemoLib.component.demoRepository
 }

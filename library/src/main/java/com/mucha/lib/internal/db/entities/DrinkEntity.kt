@@ -12,5 +12,5 @@ import androidx.room.PrimaryKey
  * @property thumbnailUrl The url to the thumbnail of the drink.
  */
 @Keep
-@Entity
-internal data class Drink(@PrimaryKey val id: Int, val name: String, val thumbnailUrl: String)
+@Entity(tableName = "drinks")
+internal data class DrinkEntity(@PrimaryKey val id: Int, val name: String, val thumbnailUrl: String)

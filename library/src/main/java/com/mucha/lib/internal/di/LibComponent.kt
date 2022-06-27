@@ -1,7 +1,7 @@
 package com.mucha.lib.internal.di
 
 import android.app.Application
-import com.mucha.lib.api.DemoApi
+import com.mucha.lib.api.DemoRepository
 import com.mucha.lib.internal.di.modules.DatabaseModule
 import com.mucha.lib.internal.di.modules.LibModule
 import com.mucha.lib.internal.di.modules.ServiceModule
@@ -31,7 +31,7 @@ internal interface LibComponent {
         fun build(): LibComponent
     }
 
-    val demoApi: DemoApi
+    val demoRepository: DemoRepository
 
     // Workers
     fun inject(worker: DatabaseRefreshWorker)

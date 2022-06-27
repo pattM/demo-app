@@ -1,7 +1,7 @@
 package com.mucha.lib.internal.di.modules
 
-import com.mucha.lib.api.DemoApi
-import com.mucha.lib.internal.DefaultDemoApi
+import com.mucha.lib.api.DemoRepository
+import com.mucha.lib.internal.DefaultDemoRepository
 import com.mucha.lib.internal.db.dao.CategoryDao
 import com.mucha.lib.internal.db.dao.DrinkDao
 import dagger.Module
@@ -18,5 +18,6 @@ internal class LibModule {
 
     @Provides
     @Singleton
-    fun demoApi(categoryDao: CategoryDao, drinkDao: DrinkDao): DemoApi = DefaultDemoApi(categoryDao, drinkDao)
+    fun demoRepository(categoryDao: CategoryDao, drinkDao: DrinkDao): DemoRepository =
+        DefaultDemoRepository(categoryDao, drinkDao)
 }

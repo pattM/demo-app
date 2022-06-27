@@ -7,16 +7,16 @@ import androidx.room.RoomDatabase
 import com.mucha.lib.internal.db.DemoDatabase.Companion.create
 import com.mucha.lib.internal.db.dao.CategoryDao
 import com.mucha.lib.internal.db.dao.DrinkDao
-import com.mucha.lib.internal.db.entities.Category
-import com.mucha.lib.internal.db.entities.Drink
+import com.mucha.lib.internal.db.entities.CategoryEntity
+import com.mucha.lib.internal.db.entities.DrinkEntity
 
 /**
  * Main database of a library module. Use provided [create] method to create an instance.
  */
 @Database(
     entities = [
-        Category::class,
-        Drink::class,
+        CategoryEntity::class,
+        DrinkEntity::class,
     ],
     version = VERSION
 )

@@ -13,8 +13,8 @@ import androidx.work.WorkerParameters
 import com.mucha.lib.DemoLib
 import com.mucha.lib.internal.db.dao.CategoryDao
 import com.mucha.lib.internal.db.dao.DrinkDao
-import com.mucha.lib.internal.db.entities.Category
-import com.mucha.lib.internal.db.entities.Drink
+import com.mucha.lib.internal.db.entities.CategoryEntity
+import com.mucha.lib.internal.db.entities.DrinkEntity
 import com.mucha.lib.internal.service.api.CocktailService
 import dagger.Lazy
 import java.util.concurrent.TimeUnit
@@ -44,7 +44,7 @@ internal class DatabaseRefreshWorker(
         val categories = response.body()
         return if (categories != null) {
             categories.categories
-                .map { Category(id = it.name.normalize(), name = it.name) }
+                .map { CategoryEntity(id = it.name.normalize(), name = it.name) }
                 .let { categoriesToInsert -> categoryDao.get().insertAll(categoriesToInsert) }
 
             categories.categories.forEach {
@@ -68,7 +68,7 @@ internal class DatabaseRefreshWorker(
         val response = cocktailsService.getDrinks(categoryId)
         response.body()?.let { drinks ->
             drinks.drinks
-                .map { drink -> Drink(id = drink.id, name = drink.name, thumbnailUrl = drink.thumbnailUrl) }
+                .map { drink -> DrinkEntity(id = drink.id, name = drink.name, thumbnailUrl = drink.thumbnailUrl) }
                 .let { drinksToInsert -> drinkDao.get().insertAll(drinksToInsert) }
         }
     }

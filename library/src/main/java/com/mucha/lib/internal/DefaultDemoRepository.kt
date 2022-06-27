@@ -1,6 +1,6 @@
 package com.mucha.lib.internal
 
-import com.mucha.lib.api.DemoApi
+import com.mucha.lib.api.DemoRepository
 import com.mucha.lib.api.Drink
 import com.mucha.lib.api.DrinkCategory
 import com.mucha.lib.api.RefreshStatus
@@ -10,19 +10,19 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.map
-import com.mucha.lib.internal.db.entities.Category as CategoryEntity
-import com.mucha.lib.internal.db.entities.Drink as DrinkEntity
+import com.mucha.lib.internal.db.entities.CategoryEntity as CategoryEntity
+import com.mucha.lib.internal.db.entities.DrinkEntity as DrinkEntity
 
 /**
- * Default [DemoApi] implementation.
+ * Default [DemoRepository] implementation.
  *
  * @param categoryDao The [CategoryEntity] related DAO implementation.
  * @param drinkDao The [DrinkEntity] related DAO implementation.
  */
-internal class DefaultDemoApi(
+internal class DefaultDemoRepository(
     private val categoryDao: CategoryDao,
     private val drinkDao: DrinkDao,
-) : DemoApi {
+) : DemoRepository {
 
     override fun getAllCategories(): Flow<List<DrinkCategory>> =
         categoryDao.getAll().map { entities ->

@@ -4,11 +4,11 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.mucha.lib.internal.db.entities.Category
+import com.mucha.lib.internal.db.entities.CategoryEntity
 import kotlinx.coroutines.flow.Flow
 
 /**
- * [Category] related DAO definition.
+ * [CategoryEntity] related DAO definition.
  */
 @Dao
 internal interface CategoryDao {
@@ -18,8 +18,8 @@ internal interface CategoryDao {
      *
      * @return The flow of list of categories.
      */
-    @Query("SELECT * FROM Category")
-    fun getAll(): Flow<List<Category>>
+    @Query("SELECT * FROM categories")
+    fun getAll(): Flow<List<CategoryEntity>>
 
     /**
      * Inserts given `categories` into a database. Existing values will be replaced.
@@ -27,5 +27,5 @@ internal interface CategoryDao {
      * @param categories The list of categories.
      */
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertAll(categories: List<Category>)
+    fun insertAll(categories: List<CategoryEntity>)
 }

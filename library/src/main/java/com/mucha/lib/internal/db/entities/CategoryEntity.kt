@@ -11,5 +11,5 @@ import androidx.room.PrimaryKey
  * @property name The name of the category.
  */
 @Keep
-@Entity
-internal data class Category(@PrimaryKey val id: String, val name: String)
+@Entity(tableName = "categories")
+internal data class CategoryEntity(@PrimaryKey val id: String, val name: String)

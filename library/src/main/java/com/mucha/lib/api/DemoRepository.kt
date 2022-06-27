@@ -5,7 +5,7 @@ import kotlinx.coroutines.flow.Flow
 /**
  * Interface definition for a basic communication with a library.
  */
-interface DemoApi {
+interface DemoRepository {
 
     /**
      * Provides updates of all available drink categories.
