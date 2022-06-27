@@ -19,7 +19,7 @@ fun MainNavGraph(categories: List<DrinkCategory>) {
     val navController = rememberNavController()
 
     val onCategoryItemClick: (DrinkCategory) -> Unit = { category ->
-        navController.navigate("$ROUTE_DRINKS/${category.name}")
+        navController.navigate("$ROUTE_DRINKS/${category.id}")
     }
 
     val onDrinkItemClick: (String) -> Unit = { drinkName ->

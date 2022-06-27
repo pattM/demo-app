@@ -44,11 +44,11 @@ internal class DatabaseRefreshWorker(
         val categories = response.body()
         return if (categories != null) {
             categories.categories
-                .map { CategoryEntity(id = it.name.normalize(), name = it.name) }
+                .map { CategoryEntity(id = it.name.toId(), fetchId = it.name.toFetchId(), name = it.name) }
                 .let { categoriesToInsert -> categoryDao.get().insertAll(categoriesToInsert) }
 
             categories.categories.forEach {
-                fetchDrinks(it.name.normalize())
+                fetchDrinks(it.name.toFetchId())
             }
 
             Result.success()
@@ -103,5 +103,9 @@ private const val WORKER_NAME: String = ".internal.work.DatabaseRefreshWorker"
 
 private const val MAX_ATTEMPTS: Int = 2 // Zero based, thus 3
 
-// Used also to query the drinks from backend.
-private fun String.normalize(): String = this.replace(' ', '_')
+// Used to create Id for DB entity. Replace any special letters with underscore.
+private val CATEGORY_ID_REGEX: Regex = "[^a-zA-Z0-9]".toRegex()
+private fun String.toId(): String = this.replace(CATEGORY_ID_REGEX, "_")
+
+// Used for fetching additional data from backend.
+private fun String.toFetchId(): String = this.replace(' ', '_')

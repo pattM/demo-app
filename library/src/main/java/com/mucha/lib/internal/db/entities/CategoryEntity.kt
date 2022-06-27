@@ -7,9 +7,10 @@ import androidx.room.PrimaryKey
 /**
  * Represents the categorization of a drink.
  *
- * @property id The identifier of the category.
- * @property name The name of the category.
+ * @property id The identifier of the category. Local Id.
+ * @property id The identifier of the category for fetching additional information from backend.
+ * @property name The human-readable name of the category.
  */
 @Keep
 @Entity(tableName = "categories")
-internal data class CategoryEntity(@PrimaryKey val id: String, val name: String)
+internal data class CategoryEntity(@PrimaryKey val id: String, val fetchId: String, val name: String)
